@@ -1,0 +1,1159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sutra Fitness — Elevate Your Strength | V2</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Loader -->
+    <div class="loader" id="loader">
+        <div class="loader-inner">
+            <div class="loader-ring">
+                <svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="45"/></svg>
+            </div>
+            <span class="loader-text">SUTRA FITNESS</span>
+            <span class="loader-sub">Loading Experience</span>
+        </div>
+    </div>
+
+    <!-- Cursor -->
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-trail" id="cursorTrail"></div>
+
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <a href="#" class="nav-logo">SUTRA<span>FITNESS</span></a>
+        <div class="nav-links">
+            <a href="#about" class="nav-link">About</a>
+            <a href="#gallery" class="nav-link">Gallery</a>
+            <a href="#transformations" class="nav-link">Results</a>
+            <a href="#trainers" class="nav-link">Trainers</a>
+            <a href="#schedule" class="nav-link">Schedule</a>
+            <a href="#pricing" class="nav-link">Pricing</a>
+            <a href="#contact" class="nav-link">Contact</a>
+        </div>
+        <button class="nav-cta" onclick="document.getElementById('pricing').scrollIntoView({behavior:'smooth'})">Join Now</button>
+        <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#about" class="mobile-link">About</a>
+        <a href="#gallery" class="mobile-link">Gallery</a>
+        <a href="#transformations" class="mobile-link">Results</a>
+        <a href="#trainers" class="mobile-link">Trainers</a>
+        <a href="#schedule" class="mobile-link">Schedule</a>
+        <a href="#pricing" class="mobile-link">Pricing</a>
+        <a href="#contact" class="mobile-link">Contact</a>
+    </div>
+
+    <!-- [10] Sticky Join CTA Bar -->
+    <div class="sticky-cta" id="stickyCta">
+        <div class="sticky-cta-inner">
+            <div class="sticky-cta-left">
+                <span class="sticky-cta-pulse"></span>
+                <span><strong>Limited Offer:</strong> Get 50% off your first month</span>
+            </div>
+            <a href="#pricing" class="btn btn-primary btn-sm">Claim Offer</a>
+        </div>
+    </div>
+
+    <!-- ==========================================
+         [1] HERO WITH BACKGROUND VIDEO
+         ========================================== -->
+    <section class="hero" id="hero">
+        <div class="hero-video-wrap">
+            <video autoplay muted loop playsinline class="hero-video" poster="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1920&q=80">
+                <source src="https://videos.pexels.com/video-files/4761437/4761437-uhd_2560_1440_25fps.mp4" type="video/mp4">
+            </video>
+            <div class="hero-video-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-badge reveal">
+                <span class="pulse-dot"></span>
+                Now Open — Kaggadasapura, Bangalore
+            </div>
+            <h1 class="hero-title">
+                <span class="line reveal"><span class="word">ELEVATE</span></span>
+                <span class="line reveal"><span class="word italic">Your</span> <span class="word">STRENGTH</span></span>
+            </h1>
+            <p class="hero-sub reveal">Premium fitness experience with state-of-the-art equipment, expert trainers, and a community that pushes you beyond limits.</p>
+            <div class="hero-actions reveal">
+                <a href="#pricing" class="btn btn-primary">
+                    <span>Start Your Journey</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+                <a href="#gallery" class="btn btn-glass">
+                    <span>Explore Gym</span>
+                </a>
+            </div>
+            <!-- [4] Elastic Bounce Counters -->
+            <div class="hero-stats reveal">
+                <div class="stat">
+                    <span class="stat-num" data-target="12">0</span><span class="stat-plus">+</span>
+                    <span class="stat-label">Years of Excellence</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <span class="stat-num" data-target="2000">0</span><span class="stat-plus">+</span>
+                    <span class="stat-label">Members Strong</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <span class="stat-num" data-target="15">0</span><span class="stat-plus">+</span>
+                    <span class="stat-label">Expert Trainers</span>
+                </div>
+            </div>
+            <!-- [6] Live Check-in Pulse -->
+            <div class="live-pulse reveal">
+                <span class="live-dot"></span>
+                <span class="live-text"><strong id="liveCount">127</strong> members trained today</span>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-line"></div>
+            <span>Scroll</span>
+        </div>
+    </section>
+
+    <!-- Marquee -->
+    <div class="marquee">
+        <div class="marquee-track">
+            <span>STRENGTH ✦ CARDIO ✦ PERSONAL TRAINING ✦ PILATES ✦ NUTRITION ✦ COMMUNITY ✦ STRENGTH ✦ CARDIO ✦ PERSONAL TRAINING ✦ PILATES ✦ NUTRITION ✦ COMMUNITY ✦ STRENGTH ✦ CARDIO ✦ PERSONAL TRAINING ✦ PILATES ✦ NUTRITION ✦ COMMUNITY ✦</span>
+        </div>
+    </div>
+
+    <!-- [13] Workout Tip of the Day -->
+    <section class="tip-section">
+        <div class="container">
+            <div class="tip-card reveal">
+                <div class="tip-icon">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 1 1 7.072 0l-.548.547A3.374 3.374 0 0 0 12 18.469c-.882 0-1.73.348-2.357.97l-.18.186z"/></svg>
+                </div>
+                <div class="tip-content">
+                    <span class="tip-label">Tip of the Day</span>
+                    <p class="tip-text" id="tipText">Progressive overload is the key to growth. Add 2.5kg to your compound lifts every week and track your progress in a journal.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-left">
+                    <span class="section-tag reveal">Who We Are</span>
+                    <h2 class="section-title reveal">More Than <br><em>A Gym</em></h2>
+                    <p class="about-text reveal">Since 2012, Sutra Fitness has been Bangalore's premier destination for those who take their fitness seriously. Our state-of-the-art facility in CV Raman Nagar combines world-class equipment with expert guidance to help you achieve what once seemed impossible.</p>
+                    <p class="about-text reveal">We believe fitness is a journey, not a destination. Every rep, every set, every drop of sweat brings you closer to the best version of yourself.</p>
+                    <div class="about-features reveal">
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                            </div>
+                            <div>
+                                <h4>High Performance</h4>
+                                <p>Top-notch cardio & strength training equipment</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                            </div>
+                            <div>
+                                <h4>Expert Trainers</h4>
+                                <p>Certified professionals guiding every step</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                            </div>
+                            <div>
+                                <h4>Nutrition Advice</h4>
+                                <p>Personalized diet plans for your goals</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-right reveal">
+                    <div class="about-image-stack">
+                        <div class="about-img about-img-1">
+                            <img src="https://www.growfitter.com/backend/uploads/gym/gallary/5936/gf_14792835381.jpg" alt="Sutra Fitness interior" loading="lazy">
+                        </div>
+                        <div class="about-img about-img-2">
+                            <img src="https://www.growfitter.com/backend/uploads/gym/gallary/5936/gf_14792835382.jpg" alt="Sutra Fitness equipment" loading="lazy">
+                        </div>
+                        <div class="experience-badge">
+                            <span class="exp-num">12+</span>
+                            <span class="exp-text">Years of<br>Excellence</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         [3] PARALLAX GALLERY
+         ========================================== -->
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag reveal">Our Space</span>
+                <h2 class="section-title reveal">Step Inside <em>Sutra</em></h2>
+                <p class="section-sub reveal">A premium environment designed to fuel your best workouts</p>
+            </div>
+        </div>
+        <div class="gallery-grid reveal">
+            <div class="gallery-item gallery-item-wide parallax-item" data-speed="0.03">
+                <img src="https://www.growfitter.com/backend/uploads/gym/gallary/5936/gf_14792835383.jpg" alt="Sutra Fitness gym floor" loading="lazy">
+                <div class="gallery-overlay"><span>Strength Zone</span></div>
+            </div>
+            <div class="gallery-item parallax-item" data-speed="-0.02">
+                <img src="https://www.growfitter.com/backend/uploads/gym/gallary/5936/gf_14792835384.jpg" alt="Sutra Fitness cardio area" loading="lazy">
+                <div class="gallery-overlay"><span>Cardio Theatre</span></div>
+            </div>
+            <div class="gallery-item parallax-item" data-speed="0.04">
+                <img src="https://www.growfitter.com/backend/uploads/gym/gallary/5936/gf_14792835385.jpg" alt="Sutra Fitness training" loading="lazy">
+                <div class="gallery-overlay"><span>Training Area</span></div>
+            </div>
+            <div class="gallery-item parallax-item" data-speed="-0.03">
+                <img src="https://www.growfitter.com/backend/uploads/gym/gallary/5936/gf_14792835386.jpg" alt="Sutra Fitness weights" loading="lazy">
+                <div class="gallery-overlay"><span>Free Weights</span></div>
+            </div>
+            <div class="gallery-item gallery-item-wide parallax-item" data-speed="0.02">
+                <img src="https://www.growfitter.com/backend/uploads/gym/gallary/5936/gf_14792835387.jpg" alt="Sutra Fitness facility" loading="lazy">
+                <div class="gallery-overlay"><span>Premium Facility</span></div>
+            </div>
+            <div class="gallery-item parallax-item" data-speed="-0.04">
+                <img src="https://www.growfitter.com/backend/uploads/gym/gallary/5936/gf_14792835388.jpg" alt="Sutra Fitness machines" loading="lazy">
+                <div class="gallery-overlay"><span>Resistance Machines</span></div>
+            </div>
+            <div class="gallery-item parallax-item" data-speed="0.03">
+                <img src="https://www.growfitter.com/backend/uploads/gym/gallary/5936/gf_14792835389.jpg" alt="Sutra Fitness space" loading="lazy">
+                <div class="gallery-overlay"><span>Workout Space</span></div>
+            </div>
+            <div class="gallery-item parallax-item" data-speed="-0.02">
+                <img src="https://www.growfitter.com/backend/uploads/gym/gallary/5936/gf_147928353810.jpg" alt="Sutra Fitness studio" loading="lazy">
+                <div class="gallery-overlay"><span>Studio</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         [2] BEFORE/AFTER TRANSFORMATION SLIDER
+         ========================================== -->
+    <section class="transformations" id="transformations">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag reveal">Real Results</span>
+                <h2 class="section-title reveal">Member <em>Transformations</em></h2>
+                <p class="section-sub reveal">See what dedication and the right guidance can achieve</p>
+            </div>
+            <div class="transform-grid">
+                <div class="transform-card reveal">
+                    <div class="ba-slider" id="baSlider1">
+                        <div class="ba-before">
+                            <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=600&q=80" alt="Before transformation">
+                            <span class="ba-label">Before</span>
+                        </div>
+                        <div class="ba-after">
+                            <img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=600&q=80" alt="After transformation">
+                            <span class="ba-label">After</span>
+                        </div>
+                        <input type="range" min="0" max="100" value="50" class="ba-range" aria-label="Transformation slider">
+                        <div class="ba-handle">
+                            <div class="ba-handle-line"></div>
+                            <div class="ba-handle-circle">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 8l-4 4 4 4M6 8l4 4-4 4"/></svg>
+                            </div>
+                            <div class="ba-handle-line"></div>
+                        </div>
+                    </div>
+                    <div class="transform-info">
+                        <h4>Rahul S.</h4>
+                        <p>Lost <strong>18kg</strong> in 6 months</p>
+                        <div class="transform-stat-row">
+                            <span class="transform-stat">92kg <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7"/></svg> 74kg</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="transform-card reveal">
+                    <div class="ba-slider" id="baSlider2">
+                        <div class="ba-before">
+                            <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=600&q=80" alt="Before transformation">
+                            <span class="ba-label">Before</span>
+                        </div>
+                        <div class="ba-after">
+                            <img src="https://images.unsplash.com/photo-1550345332-09e3ac987658?w=600&q=80" alt="After transformation">
+                            <span class="ba-label">After</span>
+                        </div>
+                        <input type="range" min="0" max="100" value="50" class="ba-range" aria-label="Transformation slider">
+                        <div class="ba-handle">
+                            <div class="ba-handle-line"></div>
+                            <div class="ba-handle-circle">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 8l-4 4 4 4M6 8l4 4-4 4"/></svg>
+                            </div>
+                            <div class="ba-handle-line"></div>
+                        </div>
+                    </div>
+                    <div class="transform-info">
+                        <h4>Priya M.</h4>
+                        <p>Gained <strong>8kg</strong> lean muscle in 8 months</p>
+                        <div class="transform-stat-row">
+                            <span class="transform-stat">48kg <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7"/></svg> 56kg</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="transform-card reveal">
+                    <div class="ba-slider" id="baSlider3">
+                        <div class="ba-before">
+                            <img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=600&q=80" alt="Before transformation">
+                            <span class="ba-label">Before</span>
+                        </div>
+                        <div class="ba-after">
+                            <img src="https://images.unsplash.com/photo-1605296867424-35fc25c9212a?w=600&q=80" alt="After transformation">
+                            <span class="ba-label">After</span>
+                        </div>
+                        <input type="range" min="0" max="100" value="50" class="ba-range" aria-label="Transformation slider">
+                        <div class="ba-handle">
+                            <div class="ba-handle-line"></div>
+                            <div class="ba-handle-circle">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 8l-4 4 4 4M6 8l4 4-4 4"/></svg>
+                            </div>
+                            <div class="ba-handle-line"></div>
+                        </div>
+                    </div>
+                    <div class="transform-info">
+                        <h4>Arjun K.</h4>
+                        <p>Lost <strong>25kg</strong> in 10 months</p>
+                        <div class="transform-stat-row">
+                            <span class="transform-stat">105kg <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7"/></svg> 80kg</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         [5] TESTIMONIALS CAROUSEL
+         ========================================== -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag reveal">Testimonials</span>
+                <h2 class="section-title reveal">What Members <em>Say</em></h2>
+            </div>
+            <div class="testimonial-track-wrapper reveal">
+                <div class="testimonial-track">
+                    <div class="testimonial-card">
+                        <div class="tc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        <p>"Sutra Fitness completely changed my life. The trainers are incredibly knowledgeable and the atmosphere is electric. I've never been this consistent."</p>
+                        <div class="tc-author">
+                            <div class="tc-avatar">RS</div>
+                            <div><strong>Rahul S.</strong><span>Member since 2021</span></div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="tc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        <p>"Best gym in CV Raman Nagar, hands down. The equipment is always maintained and the personal training sessions are worth every rupee."</p>
+                        <div class="tc-author">
+                            <div class="tc-avatar">PM</div>
+                            <div><strong>Priya M.</strong><span>Member since 2022</span></div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="tc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        <p>"Lost 25kg in 10 months. The nutrition guidance alongside the workouts made all the difference. This place is a game-changer for anyone serious about fitness."</p>
+                        <div class="tc-author">
+                            <div class="tc-avatar">AK</div>
+                            <div><strong>Arjun K.</strong><span>Member since 2020</span></div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="tc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        <p>"As a working professional, the flexible hours (5AM-11PM!) are a lifesaver. I train at 5:30 AM and the energy is unmatched even at that hour."</p>
+                        <div class="tc-author">
+                            <div class="tc-avatar">SK</div>
+                            <div><strong>Sneha K.</strong><span>Member since 2023</span></div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="tc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        <p>"I've been to many gyms in Bangalore but Sutra stands out. Clean facility, great AC, motivated crowd, and trainers who genuinely care about your progress."</p>
+                        <div class="tc-author">
+                            <div class="tc-avatar">VR</div>
+                            <div><strong>Vikram R.</strong><span>Member since 2019</span></div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="tc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        <p>"The Pilates classes here are outstanding. My back pain is gone and I feel stronger than ever. The instructors really know their stuff."</p>
+                        <div class="tc-author">
+                            <div class="tc-avatar">DG</div>
+                            <div><strong>Deepa G.</strong><span>Member since 2022</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         [14] TRAINER PROFILES
+         ========================================== -->
+    <section class="trainers" id="trainers">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag reveal">Our Team</span>
+                <h2 class="section-title reveal">Meet Your <em>Trainers</em></h2>
+                <p class="section-sub reveal">Certified experts dedicated to your transformation</p>
+            </div>
+            <div class="trainers-grid">
+                <div class="trainer-card reveal">
+                    <div class="trainer-img">
+                        <img src="https://images.unsplash.com/photo-1567013127542-490d757e51fc?w=400&q=80" alt="Trainer Vikram" loading="lazy">
+                        <div class="trainer-overlay">
+                            <a href="#contact" class="btn btn-sm btn-primary">Book Session</a>
+                        </div>
+                    </div>
+                    <div class="trainer-info">
+                        <h4>Vikram Raj</h4>
+                        <span class="trainer-role">Head Trainer — Strength & Conditioning</span>
+                        <div class="trainer-certs">
+                            <span>ACE Certified</span>
+                            <span>10+ Yrs Exp</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="trainer-card reveal">
+                    <div class="trainer-img">
+                        <img src="https://images.unsplash.com/photo-1594381898411-846e7d193883?w=400&q=80" alt="Trainer Ananya" loading="lazy">
+                        <div class="trainer-overlay">
+                            <a href="#contact" class="btn btn-sm btn-primary">Book Session</a>
+                        </div>
+                    </div>
+                    <div class="trainer-info">
+                        <h4>Ananya Sharma</h4>
+                        <span class="trainer-role">Pilates & Flexibility Coach</span>
+                        <div class="trainer-certs">
+                            <span>NASM Certified</span>
+                            <span>7+ Yrs Exp</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="trainer-card reveal">
+                    <div class="trainer-img">
+                        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&q=80" alt="Trainer Karthik" loading="lazy">
+                        <div class="trainer-overlay">
+                            <a href="#contact" class="btn btn-sm btn-primary">Book Session</a>
+                        </div>
+                    </div>
+                    <div class="trainer-info">
+                        <h4>Karthik Nair</h4>
+                        <span class="trainer-role">HIIT & Cardio Specialist</span>
+                        <div class="trainer-certs">
+                            <span>ISSA Certified</span>
+                            <span>5+ Yrs Exp</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="trainer-card reveal">
+                    <div class="trainer-img">
+                        <img src="https://images.unsplash.com/photo-1548690312-e3b507d8c110?w=400&q=80" alt="Trainer Meera" loading="lazy">
+                        <div class="trainer-overlay">
+                            <a href="#contact" class="btn btn-sm btn-primary">Book Session</a>
+                        </div>
+                    </div>
+                    <div class="trainer-info">
+                        <h4>Meera Patel</h4>
+                        <span class="trainer-role">Nutrition & Weight Management</span>
+                        <div class="trainer-certs">
+                            <span>Certified Nutritionist</span>
+                            <span>8+ Yrs Exp</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         [9] CLASS SCHEDULE / TIMETABLE
+         ========================================== -->
+    <section class="schedule" id="schedule">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag reveal">Weekly Plan</span>
+                <h2 class="section-title reveal">Class <em>Schedule</em></h2>
+                <p class="section-sub reveal">Find the perfect class for your fitness goals</p>
+            </div>
+            <div class="schedule-wrapper reveal">
+                <div class="schedule-table">
+                    <div class="schedule-header">
+                        <div class="sch-time">Time</div>
+                        <div>Mon</div>
+                        <div>Tue</div>
+                        <div>Wed</div>
+                        <div>Thu</div>
+                        <div>Fri</div>
+                        <div>Sat</div>
+                    </div>
+                    <div class="schedule-row">
+                        <div class="sch-time">6:00 AM</div>
+                        <div class="sch-cell sch-strength">Strength</div>
+                        <div class="sch-cell sch-cardio">HIIT</div>
+                        <div class="sch-cell sch-strength">Strength</div>
+                        <div class="sch-cell sch-cardio">HIIT</div>
+                        <div class="sch-cell sch-strength">Strength</div>
+                        <div class="sch-cell sch-yoga">Yoga Flow</div>
+                    </div>
+                    <div class="schedule-row">
+                        <div class="sch-time">8:00 AM</div>
+                        <div class="sch-cell sch-cardio">Cardio Burn</div>
+                        <div class="sch-cell sch-yoga">Pilates</div>
+                        <div class="sch-cell sch-cardio">Cardio Burn</div>
+                        <div class="sch-cell sch-yoga">Pilates</div>
+                        <div class="sch-cell sch-cardio">Cardio Burn</div>
+                        <div class="sch-cell sch-strength">Full Body</div>
+                    </div>
+                    <div class="schedule-row">
+                        <div class="sch-time">10:00 AM</div>
+                        <div class="sch-cell sch-yoga">Flexibility</div>
+                        <div class="sch-cell sch-strength">Upper Body</div>
+                        <div class="sch-cell sch-yoga">Flexibility</div>
+                        <div class="sch-cell sch-strength">Upper Body</div>
+                        <div class="sch-cell sch-yoga">Flexibility</div>
+                        <div class="sch-cell sch-special">Open Gym</div>
+                    </div>
+                    <div class="schedule-row">
+                        <div class="sch-time">5:00 PM</div>
+                        <div class="sch-cell sch-strength">Lower Body</div>
+                        <div class="sch-cell sch-cardio">Boxing</div>
+                        <div class="sch-cell sch-strength">Lower Body</div>
+                        <div class="sch-cell sch-cardio">Boxing</div>
+                        <div class="sch-cell sch-strength">Lower Body</div>
+                        <div class="sch-cell sch-cardio">Spin</div>
+                    </div>
+                    <div class="schedule-row">
+                        <div class="sch-time">7:00 PM</div>
+                        <div class="sch-cell sch-cardio">CrossFit</div>
+                        <div class="sch-cell sch-strength">Push/Pull</div>
+                        <div class="sch-cell sch-cardio">CrossFit</div>
+                        <div class="sch-cell sch-strength">Push/Pull</div>
+                        <div class="sch-cell sch-special">Community WOD</div>
+                        <div class="sch-cell sch-yoga">Recovery</div>
+                    </div>
+                </div>
+                <div class="schedule-legend">
+                    <span class="legend-item"><span class="legend-dot sch-strength"></span>Strength</span>
+                    <span class="legend-item"><span class="legend-dot sch-cardio"></span>Cardio / HIIT</span>
+                    <span class="legend-item"><span class="legend-dot sch-yoga"></span>Yoga / Pilates</span>
+                    <span class="legend-item"><span class="legend-dot sch-special"></span>Special</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         [8] BMI / CALORIE CALCULATOR
+         ========================================== -->
+    <section class="calculator" id="calculator">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag reveal">Know Your Body</span>
+                <h2 class="section-title reveal">Fitness <em>Calculator</em></h2>
+                <p class="section-sub reveal">Get a quick estimate of your BMI and daily calorie needs</p>
+            </div>
+            <div class="calc-grid">
+                <!-- BMI Calculator -->
+                <div class="calc-card reveal">
+                    <h3>BMI Calculator</h3>
+                    <div class="calc-form">
+                        <div class="calc-row">
+                            <label>Height (cm)</label>
+                            <input type="number" id="bmiHeight" placeholder="170" min="100" max="250">
+                        </div>
+                        <div class="calc-row">
+                            <label>Weight (kg)</label>
+                            <input type="number" id="bmiWeight" placeholder="70" min="20" max="300">
+                        </div>
+                        <button class="btn btn-primary btn-full" onclick="calculateBMI()">Calculate BMI</button>
+                        <div class="calc-result" id="bmiResult">
+                            <div class="calc-result-num" id="bmiNum">—</div>
+                            <div class="calc-result-label" id="bmiLabel">Enter your details above</div>
+                            <div class="bmi-bar">
+                                <div class="bmi-bar-fill" id="bmiFill"></div>
+                                <div class="bmi-bar-indicator" id="bmiIndicator"></div>
+                            </div>
+                            <div class="bmi-scale">
+                                <span>Underweight</span><span>Normal</span><span>Overweight</span><span>Obese</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Calorie Calculator -->
+                <div class="calc-card reveal">
+                    <h3>Daily Calorie Needs</h3>
+                    <div class="calc-form">
+                        <div class="calc-row">
+                            <label>Age</label>
+                            <input type="number" id="calAge" placeholder="25" min="10" max="100">
+                        </div>
+                        <div class="calc-row-inline">
+                            <div class="calc-row">
+                                <label>Height (cm)</label>
+                                <input type="number" id="calHeight" placeholder="170" min="100" max="250">
+                            </div>
+                            <div class="calc-row">
+                                <label>Weight (kg)</label>
+                                <input type="number" id="calWeight" placeholder="70" min="20" max="300">
+                            </div>
+                        </div>
+                        <div class="calc-row">
+                            <label>Gender</label>
+                            <div class="calc-toggle">
+                                <button class="calc-toggle-btn active" data-gender="male" onclick="setGender(this)">Male</button>
+                                <button class="calc-toggle-btn" data-gender="female" onclick="setGender(this)">Female</button>
+                            </div>
+                        </div>
+                        <div class="calc-row">
+                            <label>Activity Level</label>
+                            <select id="calActivity">
+                                <option value="1.2">Sedentary (desk job)</option>
+                                <option value="1.375">Light (1-3 days/week)</option>
+                                <option value="1.55" selected>Moderate (3-5 days/week)</option>
+                                <option value="1.725">Active (6-7 days/week)</option>
+                                <option value="1.9">Very Active (athlete)</option>
+                            </select>
+                        </div>
+                        <button class="btn btn-primary btn-full" onclick="calculateCalories()">Calculate</button>
+                        <div class="calc-result" id="calResult">
+                            <div class="cal-goals">
+                                <div class="cal-goal">
+                                    <span class="cal-goal-num" id="calLose">—</span>
+                                    <span class="cal-goal-label">Lose Weight</span>
+                                </div>
+                                <div class="cal-goal cal-goal-main">
+                                    <span class="cal-goal-num" id="calMaintain">—</span>
+                                    <span class="cal-goal-label">Maintain</span>
+                                </div>
+                                <div class="cal-goal">
+                                    <span class="cal-goal-num" id="calGain">—</span>
+                                    <span class="cal-goal-label">Gain Muscle</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag reveal">What We Offer</span>
+                <h2 class="section-title reveal">Our <em>Services</em></h2>
+            </div>
+            <div class="services-grid">
+                <div class="service-card reveal">
+                    <div class="service-num">01</div>
+                    <div class="service-icon"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6.5 6.5h11v11h-11z"/><path d="M6.5 2v4.5M17.5 2v4.5M6.5 17.5V22M17.5 17.5V22M2 6.5h4.5M2 17.5h4.5M17.5 6.5H22M17.5 17.5H22"/></svg></div>
+                    <h3>Strength Training</h3>
+                    <p>World-class resistance machines and free weights for every muscle group. Build power, build confidence.</p>
+                </div>
+                <div class="service-card reveal">
+                    <div class="service-num">02</div>
+                    <div class="service-icon"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+                    <h3>Cardio Theatre</h3>
+                    <p>Immersive cardio zone with premium treadmills, ellipticals, and cycles. Entertainment meets endurance.</p>
+                </div>
+                <div class="service-card reveal">
+                    <div class="service-num">03</div>
+                    <div class="service-icon"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+                    <h3>Personal Training</h3>
+                    <p>One-on-one sessions with certified trainers who craft programs tailored to your unique goals.</p>
+                </div>
+                <div class="service-card reveal">
+                    <div class="service-num">04</div>
+                    <div class="service-icon"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg></div>
+                    <h3>Pilates</h3>
+                    <p>Strengthen your core, improve flexibility, and find balance through our guided Pilates classes.</p>
+                </div>
+                <div class="service-card reveal">
+                    <div class="service-num">05</div>
+                    <div class="service-icon"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg></div>
+                    <h3>Nutrition Guidance</h3>
+                    <p>Expert-crafted meal plans and nutrition counseling to fuel your transformation inside and out.</p>
+                </div>
+                <div class="service-card reveal">
+                    <div class="service-num">06</div>
+                    <div class="service-icon"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+                    <h3>Premium Amenities</h3>
+                    <p>AC facility, locker rooms, changing rooms, free parking, and a motivating atmosphere to keep you going.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag reveal">Membership</span>
+                <h2 class="section-title reveal">Choose Your <em>Plan</em></h2>
+                <p class="section-sub reveal">Invest in yourself — plans starting from just &#8377;83/day</p>
+            </div>
+            <div class="pricing-grid">
+                <div class="price-card reveal">
+                    <div class="price-tag">Day Pass</div>
+                    <div class="price-amount"><span class="currency">&#8377;</span>299</div>
+                    <p class="price-period">per day</p>
+                    <ul class="price-features">
+                        <li>Full gym access</li><li>All equipment</li><li>Locker room</li><li>AC facility</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-outline">Get Started</a>
+                </div>
+                <div class="price-card price-card-featured reveal">
+                    <div class="price-popular">Most Popular</div>
+                    <div class="price-tag">Quarterly</div>
+                    <div class="price-amount"><span class="currency">&#8377;</span>5,999 <span class="price-original">&#8377;9,000</span></div>
+                    <p class="price-period">per 3 months</p>
+                    <ul class="price-features">
+                        <li>Full gym access</li><li>All equipment & classes</li><li>Locker room & parking</li><li>Diet consultation</li><li>Fitness assessment</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-primary">Get Started</a>
+                </div>
+                <div class="price-card reveal">
+                    <div class="price-tag">Monthly</div>
+                    <div class="price-amount"><span class="currency">&#8377;</span>2,499 <span class="price-original">&#8377;5,000</span></div>
+                    <p class="price-period">per month</p>
+                    <ul class="price-features">
+                        <li>Full gym access</li><li>All equipment</li><li>Locker room & parking</li><li>Diet consultation</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-outline">Get Started</a>
+                </div>
+                <div class="price-card reveal">
+                    <div class="price-tag">Half Yearly</div>
+                    <div class="price-amount"><span class="currency">&#8377;</span>8,499 <span class="price-original">&#8377;11,800</span></div>
+                    <p class="price-period">per 6 months</p>
+                    <ul class="price-features">
+                        <li>Full gym access</li><li>All equipment & classes</li><li>Locker room & parking</li><li>Diet consultation</li><li>Fitness assessment</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-outline">Get Started</a>
+                </div>
+                <div class="price-card reveal">
+                    <div class="price-tag">Annual</div>
+                    <div class="price-amount"><span class="currency">&#8377;</span>15,340 <span class="price-original">&#8377;17,000</span></div>
+                    <p class="price-period">per year</p>
+                    <ul class="price-features">
+                        <li>Full gym access</li><li>All equipment & classes</li><li>Locker room & parking</li><li>Personal training sessions</li><li>Nutrition plan</li><li>Priority scheduling</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-outline">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         [7] INSTAGRAM FEED
+         ========================================== -->
+    <section class="instagram" id="instagram">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag reveal">Follow Us</span>
+                <h2 class="section-title reveal">@sutra.fitness on <em>Instagram</em></h2>
+            </div>
+        </div>
+        <div class="insta-grid reveal">
+            <a href="https://www.instagram.com/sutra.fitness/" target="_blank" rel="noopener" class="insta-item">
+                <img src="https://www.growfitter.com/backend/uploads/gym/gallary/5936/gf_14792835381.jpg" alt="Instagram post" loading="lazy">
+                <div class="insta-overlay">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                </div>
+            </a>
+            <a href="https://www.instagram.com/sutra.fitness/" target="_blank" rel="noopener" class="insta-item">
+                <img src="https://www.growfitter.com/backend/uploads/gym/gallary/5936/gf_14792835383.jpg" alt="Instagram post" loading="lazy">
+                <div class="insta-overlay"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></div>
+            </a>
+            <a href="https://www.instagram.com/sutra.fitness/" target="_blank" rel="noopener" class="insta-item">
+                <img src="https://www.growfitter.com/backend/uploads/gym/gallary/5936/gf_14792835385.jpg" alt="Instagram post" loading="lazy">
+                <div class="insta-overlay"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></div>
+            </a>
+            <a href="https://www.instagram.com/sutra.fitness/" target="_blank" rel="noopener" class="insta-item">
+                <img src="https://www.growfitter.com/backend/uploads/gym/gallary/5936/gf_14792835387.jpg" alt="Instagram post" loading="lazy">
+                <div class="insta-overlay"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></div>
+            </a>
+            <a href="https://www.instagram.com/sutra.fitness/" target="_blank" rel="noopener" class="insta-item">
+                <img src="https://www.growfitter.com/backend/uploads/gym/gallary/5936/gf_14792835388.jpg" alt="Instagram post" loading="lazy">
+                <div class="insta-overlay"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></div>
+            </a>
+            <a href="https://www.instagram.com/sutra.fitness/" target="_blank" rel="noopener" class="insta-item">
+                <img src="https://www.growfitter.com/backend/uploads/gym/gallary/5936/gf_14792835389.jpg" alt="Instagram post" loading="lazy">
+                <div class="insta-overlay"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Hours & Location -->
+    <section class="location" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag reveal">Find Us</span>
+                <h2 class="section-title reveal">Visit <em>Sutra</em></h2>
+            </div>
+            <div class="location-grid">
+                <div class="location-info reveal">
+                    <div class="info-card">
+                        <div class="info-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+                        <div>
+                            <h4>Address</h4>
+                            <p>No 211, 2nd Floor, Kushal Corner,<br>Kaggadasapura Road, CV Raman Nagar Post,<br>Bangalore — 560093</p>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+                        <div>
+                            <h4>Hours</h4>
+                            <div class="hours-grid">
+                                <span class="day">Mon — Sat</span><span class="time">5:00 AM — 11:00 PM</span>
+                                <span class="day">Sunday</span><span class="time">7:00 AM — 9:00 PM</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+                        <div>
+                            <h4>Contact</h4>
+                            <p><a href="tel:08064430333">080-6443-0333</a></p>
+                            <p><a href="mailto:sutra.horamavu@gmail.com">sutra.horamavu@gmail.com</a></p>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/sutra.fitness/" target="_blank" rel="noopener" class="social-link" aria-label="Facebook">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                        </a>
+                        <a href="https://www.instagram.com/sutra.fitness/" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="location-map reveal">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.7!2d77.67!3d12.98!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTLCsDU4JzQ4LjAiTiA3N8KwNDAnMTIuMCJF!5e0!3m2!1sen!2sin!4v1600000000000!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Sutra Fitness Location"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <h3 class="footer-logo">SUTRA<span>FITNESS</span></h3>
+                    <p>Elevate your strength. Transform your life.</p>
+                </div>
+                <div class="footer-cta">
+                    <h3>Ready to start?</h3>
+                    <a href="tel:08064430333" class="btn btn-primary">Call Now</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Sutra Fitness. All rights reserved.</p>
+                <p>Kaggadasapura Road, CV Raman Nagar, Bangalore</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==========================================
+         [11] FREE TRIAL POPUP WITH COUNTDOWN
+         ========================================== -->
+    <div class="popup-overlay" id="popupOverlay">
+        <div class="popup">
+            <button class="popup-close" id="popupClose" aria-label="Close popup">&times;</button>
+            <div class="popup-accent"></div>
+            <div class="popup-body">
+                <span class="popup-tag">Limited Time Offer</span>
+                <h3>Get a <em>FREE</em> 3-Day Trial</h3>
+                <p>Experience Sutra Fitness with full access to all equipment, classes, and amenities. No commitment required.</p>
+                <div class="popup-countdown">
+                    <div class="countdown-item">
+                        <span class="cd-num" id="cdHours">23</span>
+                        <span class="cd-label">Hours</span>
+                    </div>
+                    <div class="countdown-sep">:</div>
+                    <div class="countdown-item">
+                        <span class="cd-num" id="cdMins">59</span>
+                        <span class="cd-label">Minutes</span>
+                    </div>
+                    <div class="countdown-sep">:</div>
+                    <div class="countdown-item">
+                        <span class="cd-num" id="cdSecs">59</span>
+                        <span class="cd-label">Seconds</span>
+                    </div>
+                </div>
+                <a href="tel:08064430333" class="btn btn-primary btn-full">Claim Free Trial</a>
+                <span class="popup-note">Or call us: 080-6443-0333</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==========================================
+         SCRIPTS — ALL 14 ENHANCEMENTS
+         ========================================== -->
+    <script>
+    (function() {
+        'use strict';
+
+        // === LOADER ===
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('loader').classList.add('loaded');
+                document.body.classList.add('loaded');
+            }, 2200);
+        });
+
+        // === CUSTOM CURSOR ===
+        const cursor = document.getElementById('cursor');
+        const trail = document.getElementById('cursorTrail');
+        let mx = 0, my = 0, tx = 0, ty = 0;
+        document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
+        function animateCursor() {
+            tx += (mx - tx) * 0.12;
+            ty += (my - ty) * 0.12;
+            cursor.style.transform = `translate(${mx}px, ${my}px)`;
+            trail.style.transform = `translate(${tx}px, ${ty}px)`;
+            requestAnimationFrame(animateCursor);
+        }
+        animateCursor();
+        document.querySelectorAll('a, button, .gallery-item, .ba-slider, input, select').forEach(el => {
+            el.addEventListener('mouseenter', () => { cursor.classList.add('hover'); trail.classList.add('hover'); });
+            el.addEventListener('mouseleave', () => { cursor.classList.remove('hover'); trail.classList.remove('hover'); });
+        });
+
+        // === REVEAL ON SCROLL ===
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // === NAV SCROLL ===
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('nav');
+            const scroll = window.scrollY;
+            nav.classList.toggle('scrolled', scroll > 50);
+            nav.classList.toggle('hidden', scroll > lastScroll && scroll > 200);
+            lastScroll = scroll;
+        });
+
+        // === HAMBURGER ===
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+        });
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                mobileMenu.classList.remove('active');
+            });
+        });
+
+        // === [4] ELASTIC BOUNCE COUNTER ===
+        function elasticOut(t) {
+            if (t === 0 || t === 1) return t;
+            return Math.pow(2, -10 * t) * Math.sin((t - 0.075) * (2 * Math.PI) / 0.3) + 1;
+        }
+        function animateCounters() {
+            document.querySelectorAll('.stat-num').forEach(counter => {
+                const target = +counter.dataset.target;
+                const duration = 2500;
+                const start = performance.now();
+                function update(now) {
+                    const elapsed = now - start;
+                    const progress = Math.min(elapsed / duration, 1);
+                    const ease = elasticOut(progress);
+                    counter.textContent = Math.floor(target * ease).toLocaleString();
+                    if (progress < 1) requestAnimationFrame(update);
+                    else counter.textContent = target.toLocaleString();
+                }
+                requestAnimationFrame(update);
+            });
+        }
+        const statsObserver = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) { animateCounters(); statsObserver.unobserve(entry.target); }
+            });
+        }, { threshold: 0.5 });
+        const statsEl = document.querySelector('.hero-stats');
+        if (statsEl) statsObserver.observe(statsEl);
+
+        // === [10] STICKY CTA BAR ===
+        const stickyCta = document.getElementById('stickyCta');
+        const heroSection = document.getElementById('hero');
+        const stickyObserver = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                stickyCta.classList.toggle('visible', !entry.isIntersecting);
+            });
+        }, { threshold: 0 });
+        stickyObserver.observe(heroSection);
+
+        // === [3] PARALLAX GALLERY ===
+        function handleParallax() {
+            const items = document.querySelectorAll('.parallax-item');
+            items.forEach(item => {
+                const rect = item.getBoundingClientRect();
+                const speed = parseFloat(item.dataset.speed) || 0;
+                const yOffset = (rect.top - window.innerHeight / 2) * speed;
+                item.style.transform = `translateY(${yOffset}px)`;
+            });
+        }
+        window.addEventListener('scroll', handleParallax, { passive: true });
+
+        // === [2] BEFORE/AFTER SLIDERS ===
+        document.querySelectorAll('.ba-slider').forEach(slider => {
+            const range = slider.querySelector('.ba-range');
+            const before = slider.querySelector('.ba-before');
+            const handle = slider.querySelector('.ba-handle');
+            function updateSlider() {
+                const val = range.value;
+                before.style.clipPath = `inset(0 ${100 - val}% 0 0)`;
+                handle.style.left = val + '%';
+            }
+            range.addEventListener('input', updateSlider);
+            updateSlider();
+        });
+
+        // === [6] LIVE MEMBER COUNT ===
+        const liveCount = document.getElementById('liveCount');
+        let currentCount = 127;
+        setInterval(() => {
+            const change = Math.random() > 0.5 ? 1 : (Math.random() > 0.3 ? 0 : -1);
+            currentCount = Math.max(80, Math.min(200, currentCount + change));
+            liveCount.textContent = currentCount;
+        }, 4000);
+
+        // === [13] WORKOUT TIP OF THE DAY ===
+        const tips = [
+            "Progressive overload is the key to growth. Add 2.5kg to your compound lifts every week and track your progress in a journal.",
+            "Sleep is when your muscles grow. Aim for 7-9 hours of quality sleep every night for optimal recovery.",
+            "Don't skip leg day. Lower body workouts boost testosterone and growth hormone levels naturally.",
+            "Hydration affects performance more than you think. Drink at least 3 liters of water daily, more on training days.",
+            "The mind-muscle connection is real. Focus on the muscle you're working, not just moving the weight.",
+            "Protein timing matters less than total daily intake. Aim for 1.6-2.2g of protein per kg of body weight.",
+            "Rest between sets matters: 2-3 min for strength, 60-90s for hypertrophy, 30-60s for endurance."
+        ];
+        const dayIndex = new Date().getDay();
+        document.getElementById('tipText').textContent = tips[dayIndex % tips.length];
+
+        // === [11] FREE TRIAL POPUP ===
+        const popupOverlay = document.getElementById('popupOverlay');
+        const popupClose = document.getElementById('popupClose');
+        const popupDismissed = sessionStorage.getItem('sutra-popup-dismissed');
+
+        if (!popupDismissed) {
+            setTimeout(() => { popupOverlay.classList.add('visible'); }, 8000);
+        }
+        popupClose.addEventListener('click', () => {
+            popupOverlay.classList.remove('visible');
+            sessionStorage.setItem('sutra-popup-dismissed', 'true');
+        });
+        popupOverlay.addEventListener('click', e => {
+            if (e.target === popupOverlay) {
+                popupOverlay.classList.remove('visible');
+                sessionStorage.setItem('sutra-popup-dismissed', 'true');
+            }
+        });
+
+        // Countdown timer (24h from now)
+        let totalSeconds = 24 * 3600;
+        function updateCountdown() {
+            if (totalSeconds <= 0) return;
+            totalSeconds--;
+            const h = Math.floor(totalSeconds / 3600);
+            const m = Math.floor((totalSeconds % 3600) / 60);
+            const s = totalSeconds % 60;
+            document.getElementById('cdHours').textContent = String(h).padStart(2, '0');
+            document.getElementById('cdMins').textContent = String(m).padStart(2, '0');
+            document.getElementById('cdSecs').textContent = String(s).padStart(2, '0');
+        }
+        setInterval(updateCountdown, 1000);
+
+        // === SMOOTH SCROLL ===
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+
+    })();
+
+    // === [8] BMI CALCULATOR ===
+    function calculateBMI() {
+        const h = parseFloat(document.getElementById('bmiHeight').value);
+        const w = parseFloat(document.getElementById('bmiWeight').value);
+        if (!h || !w) return;
+        const bmi = (w / ((h / 100) ** 2)).toFixed(1);
+        document.getElementById('bmiNum').textContent = bmi;
+        let label = '', color = '';
+        if (bmi < 18.5) { label = 'Underweight'; color = '#60a5fa'; }
+        else if (bmi < 25) { label = 'Normal Weight'; color = '#4ade80'; }
+        else if (bmi < 30) { label = 'Overweight'; color = '#fbbf24'; }
+        else { label = 'Obese'; color = '#ef4444'; }
+        document.getElementById('bmiLabel').textContent = label;
+        document.getElementById('bmiNum').style.color = color;
+        const pct = Math.min(Math.max((bmi - 10) / 35 * 100, 0), 100);
+        document.getElementById('bmiFill').style.width = pct + '%';
+        document.getElementById('bmiIndicator').style.left = pct + '%';
+        document.getElementById('bmiResult').classList.add('active');
+    }
+
+    // === [8] CALORIE CALCULATOR ===
+    let selectedGender = 'male';
+    function setGender(btn) {
+        document.querySelectorAll('.calc-toggle-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        selectedGender = btn.dataset.gender;
+    }
+    function calculateCalories() {
+        const age = parseFloat(document.getElementById('calAge').value);
+        const h = parseFloat(document.getElementById('calHeight').value);
+        const w = parseFloat(document.getElementById('calWeight').value);
+        const activity = parseFloat(document.getElementById('calActivity').value);
+        if (!age || !h || !w) return;
+        let bmr;
+        if (selectedGender === 'male') bmr = 10 * w + 6.25 * h - 5 * age + 5;
+        else bmr = 10 * w + 6.25 * h - 5 * age - 161;
+        const maintain = Math.round(bmr * activity);
+        document.getElementById('calLose').textContent = (maintain - 500).toLocaleString() + ' cal';
+        document.getElementById('calMaintain').textContent = maintain.toLocaleString() + ' cal';
+        document.getElementById('calGain').textContent = (maintain + 400).toLocaleString() + ' cal';
+        document.getElementById('calResult').classList.add('active');
+    }
+    </script>
+
+</body>
+</html>

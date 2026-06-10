@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sutra Fitness — CRM Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ==========================================
+         SIDEBAR
+         ========================================== -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="sidebar-logo">S<span>F</span></div>
+            <div class="sidebar-brand">
+                <span class="brand-name">SUTRA<span>CRM</span></span>
+                <span class="brand-sub">Management Portal</span>
+            </div>
+        </div>
+
+        <nav class="sidebar-nav">
+            <span class="nav-group-label">Main</span>
+            <a href="#" class="sidebar-link active" data-page="dashboard">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+                <span>Dashboard</span>
+            </a>
+            <a href="#" class="sidebar-link" data-page="members">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                <span>Members</span>
+                <span class="sidebar-badge">248</span>
+            </a>
+            <a href="#" class="sidebar-link" data-page="leads">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                <span>Leads</span>
+                <span class="sidebar-badge badge-warn">12</span>
+            </a>
+            <a href="#" class="sidebar-link" data-page="attendance">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                <span>Attendance</span>
+            </a>
+
+            <span class="nav-group-label">Finance</span>
+            <a href="#" class="sidebar-link" data-page="payments">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+                <span>Payments</span>
+            </a>
+            <a href="#" class="sidebar-link" data-page="plans">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                <span>Plans</span>
+            </a>
+
+            <span class="nav-group-label">Gym</span>
+            <a href="#" class="sidebar-link" data-page="trainers">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                <span>Trainers</span>
+            </a>
+            <a href="#" class="sidebar-link" data-page="classes">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                <span>Classes</span>
+            </a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <div class="sidebar-user">
+                <div class="user-avatar">VR</div>
+                <div class="user-info">
+                    <span class="user-name">Vikram Raj</span>
+                    <span class="user-role">Admin</span>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- ==========================================
+         MAIN CONTENT
+         ========================================== -->
+    <main class="main" id="main">
+
+        <!-- Top Bar -->
+        <header class="topbar">
+            <button class="topbar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+            </button>
+            <div class="topbar-search">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                <input type="text" placeholder="Search members, payments, classes..." id="globalSearch">
+            </div>
+            <div class="topbar-actions">
+                <button class="topbar-btn notification-btn" aria-label="Notifications">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+                    <span class="notif-dot"></span>
+                </button>
+                <a href="../v2/index.html" class="topbar-btn" title="View Website" aria-label="View website">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                </a>
+            </div>
+        </header>
+
+        <!-- ========================================
+             PAGE: DASHBOARD
+             ======================================== -->
+        <div class="page active" id="page-dashboard">
+            <div class="page-header">
+                <div>
+                    <h1 class="page-title">Dashboard</h1>
+                    <p class="page-sub">Welcome back, Vikram. Here's what's happening today.</p>
+                </div>
+                <div class="page-header-actions">
+                    <span class="today-date" id="todayDate"></span>
+                </div>
+            </div>
+
+            <!-- KPI Cards -->
+            <div class="kpi-grid">
+                <div class="kpi-card">
+                    <div class="kpi-icon kpi-blue">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    </div>
+                    <div class="kpi-data">
+                        <span class="kpi-value">248</span>
+                        <span class="kpi-label">Total Members</span>
+                    </div>
+                    <div class="kpi-trend kpi-trend-up">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+                        +12%
+                    </div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-icon kpi-green">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                    </div>
+                    <div class="kpi-data">
+                        <span class="kpi-value">&#8377;4,82,600</span>
+                        <span class="kpi-label">Monthly Revenue</span>
+                    </div>
+                    <div class="kpi-trend kpi-trend-up">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+                        +8%
+                    </div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-icon kpi-amber">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                    </div>
+                    <div class="kpi-data">
+                        <span class="kpi-value">134</span>
+                        <span class="kpi-label">Check-ins Today</span>
+                    </div>
+                    <div class="kpi-trend kpi-trend-up">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+                        +5%
+                    </div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-icon kpi-red">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                    </div>
+                    <div class="kpi-data">
+                        <span class="kpi-value">18</span>
+                        <span class="kpi-label">Expiring This Week</span>
+                    </div>
+                    <div class="kpi-trend kpi-trend-down">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="23 18 13.5 8.5 8.5 13.5 1 6"/><polyline points="17 18 23 18 23 12"/></svg>
+                        Urgent
+                    </div>
+                </div>
+            </div>
+
+            <!-- Charts Row -->
+            <div class="dashboard-grid">
+                <!-- Revenue Chart (CSS-only bar chart) -->
+                <div class="card card-lg">
+                    <div class="card-header">
+                        <h3>Monthly Revenue</h3>
+                        <span class="card-tag">Last 6 Months</span>
+                    </div>
+                    <div class="chart-bar-container">
+                        <div class="chart-bar-row">
+                            <span class="chart-label">Jan</span>
+                            <div class="chart-bar-track"><div class="chart-bar" style="width:65%"><span>&#8377;3.2L</span></div></div>
+                        </div>
+                        <div class="chart-bar-row">
+                            <span class="chart-label">Feb</span>
+                            <div class="chart-bar-track"><div class="chart-bar" style="width:72%"><span>&#8377;3.5L</span></div></div>
+                        </div>
+                        <div class="chart-bar-row">
+                            <span class="chart-label">Mar</span>
+                            <div class="chart-bar-track"><div class="chart-bar" style="width:80%"><span>&#8377;3.9L</span></div></div>
+                        </div>
+                        <div class="chart-bar-row">
+                            <span class="chart-label">Apr</span>
+                            <div class="chart-bar-track"><div class="chart-bar" style="width:75%"><span>&#8377;3.7L</span></div></div>
+                        </div>
+                        <div class="chart-bar-row">
+                            <span class="chart-label">May</span>
+                            <div class="chart-bar-track"><div class="chart-bar" style="width:90%"><span>&#8377;4.4L</span></div></div>
+                        </div>
+                        <div class="chart-bar-row">
+                            <span class="chart-label">Jun</span>
+                            <div class="chart-bar-track"><div class="chart-bar chart-bar-accent" style="width:98%"><span>&#8377;4.8L</span></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Membership Breakdown -->
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Membership Mix</h3>
+                        <span class="card-tag">Active Plans</span>
+                    </div>
+                    <div class="donut-chart">
+                        <svg viewBox="0 0 36 36" class="donut">
+                            <circle cx="18" cy="18" r="15.9" fill="none" stroke="var(--border)" stroke-width="3"/>
+                            <circle cx="18" cy="18" r="15.9" fill="none" stroke="#e8ff47" stroke-width="3" stroke-dasharray="38 62" stroke-dashoffset="25"/>
+                            <circle cx="18" cy="18" r="15.9" fill="none" stroke="#4ade80" stroke-width="3" stroke-dasharray="25 75" stroke-dashoffset="87"/>
+                            <circle cx="18" cy="18" r="15.9" fill="none" stroke="#60a5fa" stroke-width="3" stroke-dasharray="20 80" stroke-dashoffset="62"/>
+                            <circle cx="18" cy="18" r="15.9" fill="none" stroke="#f472b6" stroke-width="3" stroke-dasharray="10 90" stroke-dashoffset="42"/>
+                            <circle cx="18" cy="18" r="15.9" fill="none" stroke="#a855f7" stroke-width="3" stroke-dasharray="7 93" stroke-dashoffset="32"/>
+                        </svg>
+                        <div class="donut-center">
+                            <span class="donut-total">248</span>
+                            <span class="donut-label">Active</span>
+                        </div>
+                    </div>
+                    <div class="donut-legend">
+                        <div class="legend-row"><span class="legend-color" style="background:#e8ff47"></span>Quarterly<span class="legend-val">94</span></div>
+                        <div class="legend-row"><span class="legend-color" style="background:#4ade80"></span>Monthly<span class="legend-val">62</span></div>
+                        <div class="legend-row"><span class="legend-color" style="background:#60a5fa"></span>Annual<span class="legend-val">50</span></div>
+                        <div class="legend-row"><span class="legend-color" style="background:#f472b6"></span>Half-Yearly<span class="legend-val">25</span></div>
+                        <div class="legend-row"><span class="legend-color" style="background:#a855f7"></span>Day Pass<span class="legend-val">17</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Attendance Heatmap -->
+            <div class="card">
+                <div class="card-header">
+                    <h3>Weekly Attendance Pattern</h3>
+                    <span class="card-tag">Peak Hours</span>
+                </div>
+                <div class="heatmap">
+                    <div class="heatmap-y">
+                        <span>5AM</span><span>7AM</span><span>9AM</span><span>11AM</span><span>1PM</span><span>3PM</span><span>5PM</span><span>7PM</span><span>9PM</span>
+                    </div>
+                    <div class="heatmap-grid">
+                        <div class="heatmap-x"><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span></div>
+                        <!-- Row 5AM -->
+                        <div class="hm-row">
+                            <div class="hm-cell hm-3" title="Mon 5AM: 28"></div>
+                            <div class="hm-cell hm-2" title="Tue 5AM: 22"></div>
+                            <div class="hm-cell hm-3" title="Wed 5AM: 30"></div>
+                            <div class="hm-cell hm-2" title="Thu 5AM: 20"></div>
+                            <div class="hm-cell hm-4" title="Fri 5AM: 35"></div>
+                            <div class="hm-cell hm-2" title="Sat 5AM: 18"></div>
+                            <div class="hm-cell hm-0" title="Sun 5AM: Closed"></div>
+                        </div>
+                        <!-- Row 7AM -->
+                        <div class="hm-row">
+                            <div class="hm-cell hm-4" title="Mon 7AM: 42"></div>
+                            <div class="hm-cell hm-3" title="Tue 7AM: 35"></div>
+                            <div class="hm-cell hm-4" title="Wed 7AM: 45"></div>
+                            <div class="hm-cell hm-3" title="Thu 7AM: 38"></div>
+                            <div class="hm-cell hm-5" title="Fri 7AM: 50"></div>
+                            <div class="hm-cell hm-4" title="Sat 7AM: 40"></div>
+                            <div class="hm-cell hm-2" title="Sun 7AM: 20"></div>
+                        </div>
+                        <!-- Row 9AM -->
+                        <div class="hm-row">
+                            <div class="hm-cell hm-2" title="Mon 9AM: 18"></div>
+                            <div class="hm-cell hm-2" title="Tue 9AM: 15"></div>
+                            <div class="hm-cell hm-2" title="Wed 9AM: 20"></div>
+                            <div class="hm-cell hm-1" title="Thu 9AM: 12"></div>
+                            <div class="hm-cell hm-2" title="Fri 9AM: 16"></div>
+                            <div class="hm-cell hm-3" title="Sat 9AM: 28"></div>
+                            <div class="hm-cell hm-3" title="Sun 9AM: 25"></div>
+                        </div>
+                        <!-- Row 11AM -->
+                        <div class="hm-row">
+                            <div class="hm-cell hm-1"></div><div class="hm-cell hm-1"></div><div class="hm-cell hm-1"></div><div class="hm-cell hm-1"></div><div class="hm-cell hm-1"></div><div class="hm-cell hm-2"></div><div class="hm-cell hm-2"></div>
+                        </div>
+                        <!-- Row 1PM -->
+                        <div class="hm-row">
+                            <div class="hm-cell hm-1"></div><div class="hm-cell hm-0"></div><div class="hm-cell hm-1"></div><div class="hm-cell hm-0"></div><div class="hm-cell hm-1"></div><div class="hm-cell hm-1"></div><div class="hm-cell hm-1"></div>
+                        </div>
+                        <!-- Row 3PM -->
+                        <div class="hm-row">
+                            <div class="hm-cell hm-2"></div><div class="hm-cell hm-2"></div><div class="hm-cell hm-2"></div><div class="hm-cell hm-2"></div><div class="hm-cell hm-2"></div><div class="hm-cell hm-1"></div><div class="hm-cell hm-1"></div>
+                        </div>
+                        <!-- Row 5PM -->
+                        <div class="hm-row">
+                            <div class="hm-cell hm-5" title="Mon 5PM: 55"></div>
+                            <div class="hm-cell hm-4" title="Tue 5PM: 48"></div>
+                            <div class="hm-cell hm-5" title="Wed 5PM: 52"></div>
+                            <div class="hm-cell hm-4" title="Thu 5PM: 45"></div>
+                            <div class="hm-cell hm-5" title="Fri 5PM: 58"></div>
+                            <div class="hm-cell hm-3" title="Sat 5PM: 30"></div>
+                            <div class="hm-cell hm-2" title="Sun 5PM: 18"></div>
+                        </div>
+                        <!-- Row 7PM -->
+                        <div class="hm-row">
+                            <div class="hm-cell hm-5"></div><div class="hm-cell hm-5"></div><div class="hm-cell hm-5"></div><div class="hm-cell hm-5"></div><div class="hm-cell hm-4"></div><div class="hm-cell hm-3"></div><div class="hm-cell hm-2"></div>
+                        </div>
+                        <!-- Row 9PM -->
+                        <div class="hm-row">
+                            <div class="hm-cell hm-3"></div><div class="hm-cell hm-3"></div><div class="hm-cell hm-3"></div><div class="hm-cell hm-2"></div><div class="hm-cell hm-2"></div><div class="hm-cell hm-1"></div><div class="hm-cell hm-0"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="heatmap-legend">
+                    <span>Low</span>
+                    <div class="hm-cell hm-0 hm-legend-cell"></div>
+                    <div class="hm-cell hm-1 hm-legend-cell"></div>
+                    <div class="hm-cell hm-2 hm-legend-cell"></div>
+                    <div class="hm-cell hm-3 hm-legend-cell"></div>
+                    <div class="hm-cell hm-4 hm-legend-cell"></div>
+                    <div class="hm-cell hm-5 hm-legend-cell"></div>
+                    <span>High</span>
+                </div>
+            </div>
+
+            <!-- Bottom Row: Recent Activity + Expiring -->
+            <div class="dashboard-grid">
+                <div class="card card-lg">
+                    <div class="card-header">
+                        <h3>Recent Activity</h3>
+                        <a href="#" class="card-link">View All</a>
+                    </div>
+                    <div class="activity-list">
+                        <div class="activity-item">
+                            <div class="activity-icon act-green"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div>
+                            <div class="activity-body">
+                                <span><strong>Rahul Sharma</strong> renewed his Quarterly membership</span>
+                                <span class="activity-time">2 hours ago</span>
+                            </div>
+                            <span class="activity-amount act-green">+&#8377;5,999</span>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon act-blue"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><line x1="20" y1="8" x2="20" y2="14"/><line x1="23" y1="11" x2="17" y2="11"/></svg></div>
+                            <div class="activity-body">
+                                <span><strong>Anjali Verma</strong> signed up — Monthly plan</span>
+                                <span class="activity-time">3 hours ago</span>
+                            </div>
+                            <span class="activity-amount act-green">+&#8377;2,499</span>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon act-amber"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/></svg></div>
+                            <div class="activity-body">
+                                <span><strong>Karthik Nair's</strong> membership expires in 3 days</span>
+                                <span class="activity-time">5 hours ago</span>
+                            </div>
+                            <span class="activity-tag tag-warn">Expiring</span>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon act-green"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div>
+                            <div class="activity-body">
+                                <span><strong>Priya Mehta</strong> booked a Personal Training session</span>
+                                <span class="activity-time">Yesterday</span>
+                            </div>
+                            <span class="activity-amount act-green">+&#8377;800</span>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon act-red"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div>
+                            <div class="activity-body">
+                                <span><strong>Deepak Kumar</strong> membership expired — no renewal</span>
+                                <span class="activity-time">Yesterday</span>
+                            </div>
+                            <span class="activity-tag tag-danger">Churned</span>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon act-blue"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><line x1="20" y1="8" x2="20" y2="14"/><line x1="23" y1="11" x2="17" y2="11"/></svg></div>
+                            <div class="activity-body">
+                                <span><strong>Sneha Kulkarni</strong> signed up — Annual plan</span>
+                                <span class="activity-time">2 days ago</span>
+                            </div>
+                            <span class="activity-amount act-green">+&#8377;15,340</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Leads Pipeline -->
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Leads Pipeline</h3>
+                        <span class="card-tag">This Week</span>
+                    </div>
+                    <div class="leads-pipeline">
+                        <div class="lead-stage">
+                            <div class="lead-stage-header">
+                                <span class="lead-stage-dot" style="background:#60a5fa"></span>
+                                <span>New Enquiry</span>
+                                <span class="lead-stage-count">5</span>
+                            </div>
+                            <div class="lead-mini-card">
+                                <strong>Arun P.</strong><span>Walked in today</span>
+                            </div>
+                            <div class="lead-mini-card">
+                                <strong>Meghna R.</strong><span>Called — wants Pilates</span>
+                            </div>
+                        </div>
+                        <div class="lead-stage">
+                            <div class="lead-stage-header">
+                                <span class="lead-stage-dot" style="background:#fbbf24"></span>
+                                <span>Trial Booked</span>
+                                <span class="lead-stage-count">4</span>
+                            </div>
+                            <div class="lead-mini-card">
+                                <strong>Naveen S.</strong><span>Trial on Jun 12</span>
+                            </div>
+                            <div class="lead-mini-card">
+                                <strong>Ritika D.</strong><span>Trial on Jun 13</span>
+                            </div>
+                        </div>
+                        <div class="lead-stage">
+                            <div class="lead-stage-header">
+                                <span class="lead-stage-dot" style="background:#4ade80"></span>
+                                <span>Follow-Up</span>
+                                <span class="lead-stage-count">3</span>
+                            </div>
+                            <div class="lead-mini-card">
+                                <strong>Varun K.</strong><span>Liked the trial, pricing Q</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========================================
+             PAGE: MEMBERS
+             ======================================== -->
+        <div class="page" id="page-members">
+            <div class="page-header">
+                <div>
+                    <h1 class="page-title">Members</h1>
+                    <p class="page-sub">Manage all gym members and their memberships</p>
+                </div>
+                <div class="page-header-actions">
+                    <button class="btn btn-primary" onclick="document.getElementById('addMemberModal').classList.add('visible')">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                        Add Member
+                    </button>
+                </div>
+            </div>
+
+            <!-- Filters -->
+            <div class="filters-bar">
+                <div class="filter-tabs">
+                    <button class="filter-tab active">All (248)</button>
+                    <button class="filter-tab">Active (210)</button>
+                    <button class="filter-tab">Expiring (18)</button>
+                    <button class="filter-tab">Expired (20)</button>
+                </div>
+                <div class="filter-search">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                    <input type="text" placeholder="Search members...">
+                </div>
+            </div>
+
+            <!-- Members Table -->
+            <div class="table-container">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Member</th>
+                            <th>Plan</th>
+                            <th>Joined</th>
+                            <th>Expires</th>
+                            <th>Status</th>
+                            <th>Last Visit</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="td-member"><div class="member-avatar bg-1">RS</div><div><strong>Rahul Sharma</strong><span>+91 98765 43210</span></div></td>
+                            <td><span class="plan-badge plan-quarterly">Quarterly</span></td>
+                            <td>Jan 15, 2024</td>
+                            <td>Sep 15, 2026</td>
+                            <td><span class="status-badge status-active">Active</span></td>
+                            <td>Today</td>
+                            <td class="td-actions"><button class="action-btn" title="Edit">&#9998;</button><button class="action-btn" title="View">&#8599;</button></td>
+                        </tr>
+                        <tr>
+                            <td class="td-member"><div class="member-avatar bg-2">PM</div><div><strong>Priya Mehta</strong><span>+91 87654 32109</span></div></td>
+                            <td><span class="plan-badge plan-annual">Annual</span></td>
+                            <td>Mar 02, 2024</td>
+                            <td>Mar 02, 2027</td>
+                            <td><span class="status-badge status-active">Active</span></td>
+                            <td>Today</td>
+                            <td class="td-actions"><button class="action-btn" title="Edit">&#9998;</button><button class="action-btn" title="View">&#8599;</button></td>
+                        </tr>
+                        <tr>
+                            <td class="td-member"><div class="member-avatar bg-3">AK</div><div><strong>Arjun Kumar</strong><span>+91 76543 21098</span></div></td>
+                            <td><span class="plan-badge plan-monthly">Monthly</span></td>
+                            <td>May 20, 2026</td>
+                            <td>Jun 20, 2026</td>
+                            <td><span class="status-badge status-expiring">Expiring</span></td>
+                            <td>Yesterday</td>
+                            <td class="td-actions"><button class="action-btn" title="Edit">&#9998;</button><button class="action-btn" title="View">&#8599;</button></td>
+                        </tr>
+                        <tr>
+                            <td class="td-member"><div class="member-avatar bg-4">SK</div><div><strong>Sneha Kulkarni</strong><span>+91 65432 10987</span></div></td>
+                            <td><span class="plan-badge plan-annual">Annual</span></td>
+                            <td>Jun 05, 2026</td>
+                            <td>Jun 05, 2027</td>
+                            <td><span class="status-badge status-active">Active</span></td>
+                            <td>Today</td>
+                            <td class="td-actions"><button class="action-btn" title="Edit">&#9998;</button><button class="action-btn" title="View">&#8599;</button></td>
+                        </tr>
+                        <tr>
+                            <td class="td-member"><div class="member-avatar bg-5">DK</div><div><strong>Deepak Kumar</strong><span>+91 54321 09876</span></div></td>
+                            <td><span class="plan-badge plan-quarterly">Quarterly</span></td>
+                            <td>Sep 10, 2025</td>
+                            <td>Jun 05, 2026</td>
+                            <td><span class="status-badge status-expired">Expired</span></td>
+                            <td>2 weeks ago</td>
+                            <td class="td-actions"><button class="action-btn" title="Edit">&#9998;</button><button class="action-btn" title="View">&#8599;</button></td>
+                        </tr>
+                        <tr>
+                            <td class="td-member"><div class="member-avatar bg-6">AV</div><div><strong>Anjali Verma</strong><span>+91 43210 98765</span></div></td>
+                            <td><span class="plan-badge plan-monthly">Monthly</span></td>
+                            <td>Jun 10, 2026</td>
+                            <td>Jul 10, 2026</td>
+                            <td><span class="status-badge status-active">Active</span></td>
+                            <td>Today</td>
+                            <td class="td-actions"><button class="action-btn" title="Edit">&#9998;</button><button class="action-btn" title="View">&#8599;</button></td>
+                        </tr>
+                        <tr>
+                            <td class="td-member"><div class="member-avatar bg-7">VR</div><div><strong>Vikash Rathore</strong><span>+91 32109 87654</span></div></td>
+                            <td><span class="plan-badge plan-half">Half-Yearly</span></td>
+                            <td>Jan 01, 2026</td>
+                            <td>Jul 01, 2026</td>
+                            <td><span class="status-badge status-active">Active</span></td>
+                            <td>Today</td>
+                            <td class="td-actions"><button class="action-btn" title="Edit">&#9998;</button><button class="action-btn" title="View">&#8599;</button></td>
+                        </tr>
+                        <tr>
+                            <td class="td-member"><div class="member-avatar bg-8">NP</div><div><strong>Neha Patil</strong><span>+91 21098 76543</span></div></td>
+                            <td><span class="plan-badge plan-quarterly">Quarterly</span></td>
+                            <td>Apr 15, 2026</td>
+                            <td>Jul 15, 2026</td>
+                            <td><span class="status-badge status-active">Active</span></td>
+                            <td>3 days ago</td>
+                            <td class="td-actions"><button class="action-btn" title="Edit">&#9998;</button><button class="action-btn" title="View">&#8599;</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="table-footer">
+                <span>Showing 8 of 248 members</span>
+                <div class="pagination">
+                    <button class="page-btn" disabled>&laquo;</button>
+                    <button class="page-btn active">1</button>
+                    <button class="page-btn">2</button>
+                    <button class="page-btn">3</button>
+                    <span>...</span>
+                    <button class="page-btn">31</button>
+                    <button class="page-btn">&raquo;</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========================================
+             PAGE: PAYMENTS
+             ======================================== -->
+        <div class="page" id="page-payments">
+            <div class="page-header">
+                <div>
+                    <h1 class="page-title">Payments</h1>
+                    <p class="page-sub">Track all transactions and billing</p>
+                </div>
+                <div class="page-header-actions">
+                    <button class="btn btn-outline-sm">Export CSV</button>
+                    <button class="btn btn-primary">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                        Record Payment
+                    </button>
+                </div>
+            </div>
+
+            <div class="table-container">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Receipt #</th>
+                            <th>Member</th>
+                            <th>Date</th>
+                            <th>Plan</th>
+                            <th>Amount</th>
+                            <th>Method</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="td-mono">#SF-2461</td>
+                            <td><strong>Rahul Sharma</strong></td>
+                            <td>Jun 10, 2026</td>
+                            <td>Quarterly</td>
+                            <td class="td-amount">&#8377;5,999</td>
+                            <td>UPI</td>
+                            <td><span class="status-badge status-active">Paid</span></td>
+                        </tr>
+                        <tr>
+                            <td class="td-mono">#SF-2460</td>
+                            <td><strong>Anjali Verma</strong></td>
+                            <td>Jun 10, 2026</td>
+                            <td>Monthly</td>
+                            <td class="td-amount">&#8377;2,499</td>
+                            <td>Card</td>
+                            <td><span class="status-badge status-active">Paid</span></td>
+                        </tr>
+                        <tr>
+                            <td class="td-mono">#SF-2459</td>
+                            <td><strong>Sneha Kulkarni</strong></td>
+                            <td>Jun 05, 2026</td>
+                            <td>Annual</td>
+                            <td class="td-amount">&#8377;15,340</td>
+                            <td>Bank Transfer</td>
+                            <td><span class="status-badge status-active">Paid</span></td>
+                        </tr>
+                        <tr>
+                            <td class="td-mono">#SF-2458</td>
+                            <td><strong>Deepak Kumar</strong></td>
+                            <td>Jun 01, 2026</td>
+                            <td>Quarterly</td>
+                            <td class="td-amount">&#8377;5,999</td>
+                            <td>—</td>
+                            <td><span class="status-badge status-expired">Overdue</span></td>
+                        </tr>
+                        <tr>
+                            <td class="td-mono">#SF-2457</td>
+                            <td><strong>Priya Mehta</strong></td>
+                            <td>May 28, 2026</td>
+                            <td>PT Session</td>
+                            <td class="td-amount">&#8377;800</td>
+                            <td>Cash</td>
+                            <td><span class="status-badge status-active">Paid</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- ========================================
+             PAGE: LEADS
+             ======================================== -->
+        <div class="page" id="page-leads">
+            <div class="page-header">
+                <div>
+                    <h1 class="page-title">Leads</h1>
+                    <p class="page-sub">Track and convert potential members</p>
+                </div>
+                <div class="page-header-actions">
+                    <button class="btn btn-primary">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                        Add Lead
+                    </button>
+                </div>
+            </div>
+
+            <div class="kanban-board">
+                <div class="kanban-col">
+                    <div class="kanban-col-header">
+                        <span class="kanban-dot" style="background:#60a5fa"></span>
+                        <h4>New Enquiry</h4>
+                        <span class="kanban-count">5</span>
+                    </div>
+                    <div class="kanban-cards">
+                        <div class="kanban-card">
+                            <div class="kc-top"><strong>Arun Prasad</strong><span class="kc-time">Today</span></div>
+                            <p>Walked in, interested in strength training. Budget: &#8377;3-5k/month</p>
+                            <div class="kc-tags"><span class="kc-tag">Walk-in</span><span class="kc-tag">Strength</span></div>
+                        </div>
+                        <div class="kanban-card">
+                            <div class="kc-top"><strong>Meghna Rao</strong><span class="kc-time">Today</span></div>
+                            <p>Called about Pilates classes. Wants evening schedule.</p>
+                            <div class="kc-tags"><span class="kc-tag">Phone</span><span class="kc-tag">Pilates</span></div>
+                        </div>
+                        <div class="kanban-card">
+                            <div class="kc-top"><strong>Suresh B.</strong><span class="kc-time">Yesterday</span></div>
+                            <p>Instagram DM. Looking for a gym near Kaggadasapura.</p>
+                            <div class="kc-tags"><span class="kc-tag">Instagram</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="kanban-col">
+                    <div class="kanban-col-header">
+                        <span class="kanban-dot" style="background:#fbbf24"></span>
+                        <h4>Trial Booked</h4>
+                        <span class="kanban-count">4</span>
+                    </div>
+                    <div class="kanban-cards">
+                        <div class="kanban-card">
+                            <div class="kc-top"><strong>Naveen Singh</strong><span class="kc-time">Jun 12</span></div>
+                            <p>3-day trial starting Thursday. Wants to try morning batch.</p>
+                            <div class="kc-tags"><span class="kc-tag">Trial</span><span class="kc-tag">Morning</span></div>
+                        </div>
+                        <div class="kanban-card">
+                            <div class="kc-top"><strong>Ritika Desai</strong><span class="kc-time">Jun 13</span></div>
+                            <p>Free trial from website popup. Interested in annual plan if happy.</p>
+                            <div class="kc-tags"><span class="kc-tag">Website</span><span class="kc-tag">Annual</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="kanban-col">
+                    <div class="kanban-col-header">
+                        <span class="kanban-dot" style="background:#a855f7"></span>
+                        <h4>Follow-Up</h4>
+                        <span class="kanban-count">3</span>
+                    </div>
+                    <div class="kanban-cards">
+                        <div class="kanban-card">
+                            <div class="kc-top"><strong>Varun Kapoor</strong><span class="kc-time">Jun 8</span></div>
+                            <p>Completed trial. Liked facilities. Asking about quarterly pricing.</p>
+                            <div class="kc-tags"><span class="kc-tag kc-tag-hot">Hot Lead</span><span class="kc-tag">Quarterly</span></div>
+                        </div>
+                        <div class="kanban-card">
+                            <div class="kc-top"><strong>Divya L.</strong><span class="kc-time">Jun 6</span></div>
+                            <p>Tried once, didn't return. Needs a follow-up call.</p>
+                            <div class="kc-tags"><span class="kc-tag kc-tag-cold">Cold</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="kanban-col">
+                    <div class="kanban-col-header">
+                        <span class="kanban-dot" style="background:#4ade80"></span>
+                        <h4>Converted</h4>
+                        <span class="kanban-count">8</span>
+                    </div>
+                    <div class="kanban-cards">
+                        <div class="kanban-card kanban-card-success">
+                            <div class="kc-top"><strong>Anjali Verma</strong><span class="kc-time">Jun 10</span></div>
+                            <p>Signed up for Monthly plan. &#8377;2,499 paid via Card.</p>
+                            <div class="kc-tags"><span class="kc-tag kc-tag-success">Converted</span></div>
+                        </div>
+                        <div class="kanban-card kanban-card-success">
+                            <div class="kc-top"><strong>Sneha K.</strong><span class="kc-time">Jun 5</span></div>
+                            <p>Signed up for Annual plan. &#8377;15,340 paid via transfer.</p>
+                            <div class="kc-tags"><span class="kc-tag kc-tag-success">Converted</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Placeholder pages for other nav items -->
+        <div class="page" id="page-attendance">
+            <div class="page-header"><div><h1 class="page-title">Attendance</h1><p class="page-sub">Daily check-in and check-out records</p></div></div>
+            <div class="empty-state"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><polyline points="9 16 11 18 15 14"/></svg><h3>Attendance Tracking</h3><p>Member check-in/check-out records will appear here. This is a static demo.</p></div>
+        </div>
+        <div class="page" id="page-plans">
+            <div class="page-header"><div><h1 class="page-title">Plans</h1><p class="page-sub">Manage membership plans and pricing</p></div></div>
+            <div class="empty-state"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg><h3>Plan Management</h3><p>Create, edit, and manage membership plans and their pricing from here.</p></div>
+        </div>
+        <div class="page" id="page-trainers">
+            <div class="page-header"><div><h1 class="page-title">Trainers</h1><p class="page-sub">Manage trainer profiles and schedules</p></div></div>
+            <div class="empty-state"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg><h3>Trainer Management</h3><p>Add trainer profiles, assign sessions, and manage schedules from here.</p></div>
+        </div>
+        <div class="page" id="page-classes">
+            <div class="page-header"><div><h1 class="page-title">Classes</h1><p class="page-sub">Schedule and manage group classes</p></div></div>
+            <div class="empty-state"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><h3>Class Management</h3><p>Create and schedule group classes, assign trainers, and track attendance.</p></div>
+        </div>
+
+    </main>
+
+    <!-- Add Member Modal -->
+    <div class="modal-overlay" id="addMemberModal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3>Add New Member</h3>
+                <button class="modal-close" onclick="document.getElementById('addMemberModal').classList.remove('visible')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" placeholder="Enter full name">
+                    </div>
+                    <div class="form-group">
+                        <label>Phone</label>
+                        <input type="tel" placeholder="+91 XXXXX XXXXX">
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" placeholder="member@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label>Plan</label>
+                        <select>
+                            <option>Monthly — &#8377;2,499</option>
+                            <option selected>Quarterly — &#8377;5,999</option>
+                            <option>Half-Yearly — &#8377;8,499</option>
+                            <option>Annual — &#8377;15,340</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Start Date</label>
+                        <input type="date">
+                    </div>
+                    <div class="form-group">
+                        <label>Payment Method</label>
+                        <select>
+                            <option>UPI</option>
+                            <option>Card</option>
+                            <option>Cash</option>
+                            <option>Bank Transfer</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-ghost" onclick="document.getElementById('addMemberModal').classList.remove('visible')">Cancel</button>
+                <button class="btn btn-primary">Add Member</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==========================================
+         SCRIPTS
+         ========================================== -->
+    <script>
+    (function() {
+        'use strict';
+
+        // === PAGE NAVIGATION ===
+        const sidebarLinks = document.querySelectorAll('.sidebar-link');
+        const pages = document.querySelectorAll('.page');
+
+        sidebarLinks.forEach(link => {
+            link.addEventListener('click', e => {
+                e.preventDefault();
+                const target = link.dataset.page;
+                sidebarLinks.forEach(l => l.classList.remove('active'));
+                link.classList.add('active');
+                pages.forEach(p => p.classList.remove('active'));
+                document.getElementById('page-' + target).classList.add('active');
+                // Close mobile sidebar
+                document.getElementById('sidebar').classList.remove('open');
+            });
+        });
+
+        // === SIDEBAR TOGGLE ===
+        document.getElementById('sidebarToggle').addEventListener('click', () => {
+            document.getElementById('sidebar').classList.toggle('open');
+        });
+
+        // === DATE ===
+        const d = new Date();
+        const opts = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        document.getElementById('todayDate').textContent = d.toLocaleDateString('en-IN', opts);
+
+        // === FILTER TABS ===
+        document.querySelectorAll('.filter-tabs').forEach(group => {
+            group.querySelectorAll('.filter-tab').forEach(tab => {
+                tab.addEventListener('click', () => {
+                    group.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+                });
+            });
+        });
+
+        // === MODAL ===
+        document.querySelectorAll('.modal-overlay').forEach(overlay => {
+            overlay.addEventListener('click', e => {
+                if (e.target === overlay) overlay.classList.remove('visible');
+            });
+        });
+
+        // === ANIMATE BAR CHART ON LOAD ===
+        document.querySelectorAll('.chart-bar').forEach(bar => {
+            const targetWidth = bar.style.width;
+            bar.style.width = '0';
+            setTimeout(() => { bar.style.width = targetWidth; }, 400);
+        });
+
+    })();
+    </script>
+</body>
+</html>
